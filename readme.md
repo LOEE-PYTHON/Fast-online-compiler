@@ -63,9 +63,9 @@ or
 
 ## Using Docker :
 ``` 
-    docker-compose up -d --build 
+docker-compose up -d --build 
 ```
-    Server will be running at localhost:80    
+Server will be running at localhost:80    
 ## Using VirtualEnv :
 ```
     virtualenv venv
