@@ -34,5 +34,5 @@ services:
     restart: always
     build: ./nginx
     ports:
-      - "80:80"
-      - "443:443"
+      - "6688:80"
+      - "6699:443"
