@@ -7,7 +7,7 @@ RUN apt-get update
 RUN apt-get install gcc openjdk-11-jdk g++ python3 python3-pip nodejs -y --fix-missing
 COPY requirements.txt requirements.txt
 RUN pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt --trusted-host mirrors.aliyun.com
 RUN pip install gunicorn
 COPY . .
 EXPOSE 5000
