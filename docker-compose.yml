@@ -14,15 +14,7 @@ services:
     volumes:
       # - ./db:/data/db
       - ./mongo-init.sh:/docker-entrypoint-initdb.d/mongo-init.sh:ro
-  nginx:
-    container_name: nginx_compiler
-    restart: always
-    build: ./nginx
-    depends_on:
-      - web
-    ports:
-      - "6688:80"
-      - "6699:443"
+
   web:
     container_name: flask_compiler
     tty: true
@@ -38,3 +30,12 @@ services:
     depends_on:
       - mongodb_container
 
+  nginx:
+    container_name: nginx_compiler
+    restart: always
+    build: ./nginx
+    depends_on:
+      - web
+    ports:
+      - "6688:80"
+      - "6699:443"
